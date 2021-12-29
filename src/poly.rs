@@ -1,6 +1,4 @@
-pub mod poly {
-    struct Poly {
-    }
+struct Poly {
 }
 fn main(){
     println!("hello poly world!");

@@ -1,6 +1,5 @@
-mod poly;
 #[cfg(test)]
-use poly;
+use rust_blog::poly;
 
 mod test {
     #[test]

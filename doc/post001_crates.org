@@ -4,7 +4,8 @@
   toolchain manager
 
   This require some knowledge about how cargo works and how rust
-  groups code
+  groups code: you can find other references in the 7th chapter of the
+  Rust Book
 ** a few things about cargo
 *** basic default file layout for cargo
  cargo has a default layout: with the same toml you may expect
@@ -12,7 +13,7 @@
  #+begin_export ascii
  projectname/
  |
- +- cargo.toml
+ +- Cargo.toml
  |
  +- src/
     |
@@ -23,7 +24,7 @@
  #+begin_export ascii
  projectname/
  |
- +- cargo.toml
+ +- Cargo.toml
  |
  +- src/
     |
@@ -96,7 +97,8 @@
             +- traits
    #+end_export
    packages are the highest level: they can be external, built-in
-   (e.g. ~std~) or user created.
+   (e.g. ~std~) or user created. Each project defined by a Cargo.toml
+   is a package
 
    Each package can contain a hierarchy of crates, which means they
    have the same root and do not have circular dependencies
@@ -111,13 +113,45 @@
     contains the code which will be attributed by default to the crate
     with the same name as the project
 
+    all modules are defined by using the ~mod~ keyword followed by a
+    block; modules definition can be nested
+
+    Modules act as namespace and as incapsulation protection. While
+    modules on the same file are accessible, their inner objects
+    should be marked as ~pub~ (short for public) to be accessible
+    #+name: nested-module-example
+    #+begin_src rust
+      mod mymodule {
+          pub fn myfunc(){}
+          pub mod mysubmodule{
+              pub fn myotherfunc(){}
+          }
+      }
+    #+end_src
+
+    accessing modules from within the same file can be done via a path
+    #+name: nested-module-basic-usage
+    #+begin_src rust
+      fn main(){
+          mymodule::myfunc();
+          mymodule::mysubmodule::myotherfunc();
+      }
+    #+end_src
+
+    #+begin_src rust :noweb yes :tangle ../examples/basic_nested_modules.rs :export none
+      <<nested-module-example>>
+    
+      <<nested-module-basic-usage>>
+    #+end_src
+*** use keyword and navigating the crate hierarchy
+    
 ** mixing all together
 *** other compilation targets
  files in the ~examples~ and ~tests~ are compiled according to the appropriate target   
  #+begin_export ascii
  projectname/
  |
- +- cargo.toml
+ +- Cargo.toml
  |
  +- src/
  |  |
@@ -143,3 +177,20 @@
 
  But now things starts to be tricky: how can you import the modules in
  the src directory in order to test them?
+
+ the same applies for examples
+*** accessing the default crate from test files
+    suppose we have the following function in our library
+    #+begin_src rust :tangle ../src/lib.rs
+      pub mod poly;
+      pub fn myfunc(){}
+    #+end_src
+
+    the crate name is taken from the Cargo.toml name attribute
+    #+begin_src rust :tangle ../tests/test_access_base.rs
+      use rust_blog;
+      #[test]
+      fn test_access_base(){
+          rust_blog::myfunc();
+      }
+    #+end_src
