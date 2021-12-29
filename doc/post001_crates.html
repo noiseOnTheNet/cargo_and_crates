@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-12-29 Wed 19:12 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Marco Paolo Valerio Vezzoli" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0463098">1. crates and cargo</a>
+<ul>
+<li><a href="#org5ec1a00">1.1. a few things about cargo</a>
+<ul>
+<li><a href="#orged0315c">1.1.1. basic default file layout for cargo</a></li>
+<li><a href="#orga5bc51d">1.1.2. compilation target basics</a></li>
+<li><a href="#org182a36b">1.1.3. library and tests</a></li>
+</ul>
+</li>
+<li><a href="#orgcd86a3f">1.2. how rust groups code</a>
+<ul>
+<li><a href="#org9a5ece2">1.2.1. the code hierarchy</a></li>
+<li><a href="#orgf92644c">1.2.2. the crate and modules default</a></li>
+<li><a href="#orgb9bae1b">1.2.3. use keyword and navigating the crate hierarchy</a></li>
+</ul>
+</li>
+<li><a href="#org2715858">1.3. mixing all together</a>
+<ul>
+<li><a href="#org9f6b540">1.3.1. other compilation targets</a></li>
+<li><a href="#orgc62433b">1.3.2. accessing the default crate from test files</a></li>
+<li><a href="#org33ba0d6">1.3.3. accessing modules from different files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0463098" class="outline-2">
+<h2 id="org0463098"><span class="section-number-2">1</span> crates and cargo</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This post is aimed at collecting some notes for crates usage,
+<code>cargo</code> is a fundamental element of this description being the main
+toolchain manager
+</p>
+
+<p>
+This require some knowledge about how cargo works and how rust
+groups code: you can find other references in the 7th chapter of the
+Rust Book
+</p>
+</div>
+<div id="outline-container-org5ec1a00" class="outline-3">
+<h3 id="org5ec1a00"><span class="section-number-3">1.1</span> a few things about cargo</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orged0315c" class="outline-4">
+<h4 id="orged0315c"><span class="section-number-4">1.1.1</span> basic default file layout for cargo</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+cargo has a default layout: with the same toml you may expect
+</p>
+<ul class="org-ul">
+<li>a binary project as generated by</li>
+</ul>
+<pre class="example" id="org525f2fa">
+projectname/
+|
++- Cargo.toml
+|
++- src/
+   |
+   +- main.rs
+</pre>
+
+<ul class="org-ul">
+<li>a library project</li>
+</ul>
+<pre class="example" id="org08e01ec">
+projectname/
+|
++- Cargo.toml
+|
++- src/
+   |
+   +- lib.rs
+</pre>
+
+<p>
+in both case you get compilation with
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">cargo build
+</pre>
+</div>
+
+<p>
+while in the binary case you can also run the code with
+</p>
+<pre class="example">
+cargo run
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga5bc51d" class="outline-4">
+<h4 id="orga5bc51d"><span class="section-number-4">1.1.2</span> compilation target basics</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+<code>cargo</code> has some commands and options aimed to compile differently the
+code and possibly also choose specific output
+</p>
+
+<p>
+When compiling the code with commands <code>build</code> or <code>run</code> the default
+target is <code>dev</code> while production compilation requires the flag
+<code>cargo build --release</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org182a36b" class="outline-4">
+<h4 id="org182a36b"><span class="section-number-4">1.1.3</span> library and tests</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+library example generated by <code>cargo new projectname --lib</code> contains
+some test example to start unit testing: looks like this is the
+suggested feature
+</p>
+
+<div class="org-src-container">
+<pre class="src src-rust"><span class="linenr">1: </span><span style="color: #23d7d7;">#[cfg(test)]</span>
+<span class="linenr">2: </span><span style="color: #ffad29; font-weight: bold;">mod</span> <span style="color: #008b8b;">tests</span> {
+<span class="linenr">3: </span>    <span style="color: #23d7d7;">#[test]</span>
+<span class="linenr">4: </span>    <span style="color: #ffad29; font-weight: bold;">fn</span> <span style="color: #00ede1; font-weight: bold;">it_works</span>() {
+<span class="linenr">5: </span>        <span style="color: #23d7d7;">assert_eq!</span>(2 + 2, 4);
+<span class="linenr">6: </span>    }
+<span class="linenr">7: </span>}
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>line 1 contains a macro that ensure the following entity to be
+compiled only if the "test" target is selected, which is what happens running</li>
+<li>line 2 starts a module within this file, this will be compiled only
+according to the macro at line 1</li>
+<li>line 3 contains a macro which will add some boilerplate code used
+to execute the following function and collect its result when
+executing tests</li>
+<li>line 5 contains a macro checking the two arguments for equality and
+then raising an exception if the do not equals
+<ul class="org-ul">
+<li>equality is defined by a specific trait</li>
+<li>if the exception is raised the test is failed</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash">cargo test
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>this command also executes all the tests</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcd86a3f" class="outline-3">
+<h3 id="orgcd86a3f"><span class="section-number-3">1.2</span> how rust groups code</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org9a5ece2" class="outline-4">
+<h4 id="org9a5ece2"><span class="section-number-4">1.2.1</span> the code hierarchy</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Rust uses this hierarchical structure
+</p>
+<pre class="example" id="org0ef1c0c">
++- packages
+   |
+   +- crates
+      |
+      +- modules
+         |
+         +- functions
+         |
+         +- structures
+         |
+         +- traits
+</pre>
+<p>
+packages are the highest level: they can be external, built-in
+(e.g. <code>std</code>) or user created. Each project defined by a Cargo.toml
+is a package
+</p>
+
+<p>
+Each package can contain a hierarchy of crates, which means they
+have the same root and do not have circular dependencies
+</p>
+
+<p>
+Each crate can contain a hierarchy of modules with possibly
+different access permissions
+</p>
+
+<p>
+actual code is always in the modules
+</p>
+</div>
+</div>
+<div id="outline-container-orgf92644c" class="outline-4">
+<h4 id="orgf92644c"><span class="section-number-4">1.2.2</span> the crate and modules default</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+when creating a library project with cargo the <code>lib.rs</code> file
+contains the code which will be attributed by default to the crate
+with the same name as the project
+</p>
+
+<p>
+all modules are defined by using the <code>mod</code> keyword followed by a
+block; modules definition can be nested
+</p>
+
+<p>
+Modules act as namespace and as incapsulation protection. While
+modules on the same file are accessible, their inner objects
+should be marked as <code>pub</code> (short for public) to be accessible
+</p>
+<div class="org-src-container">
+<pre class="src src-rust" id="orgc91d01b"><span style="color: #ffad29; font-weight: bold;">mod</span> <span style="color: #008b8b;">mymodule</span> {
+    <span style="color: #ffad29; font-weight: bold;">pub</span> <span style="color: #ffad29; font-weight: bold;">fn</span> <span style="color: #00ede1; font-weight: bold;">myfunc</span>(){}
+    <span style="color: #ffad29; font-weight: bold;">pub</span> <span style="color: #ffad29; font-weight: bold;">mod</span> <span style="color: #008b8b;">mysubmodule</span>{
+        <span style="color: #ffad29; font-weight: bold;">pub</span> <span style="color: #ffad29; font-weight: bold;">fn</span> <span style="color: #00ede1; font-weight: bold;">myotherfunc</span>(){}
+    }
+}
+</pre>
+</div>
+
+<p>
+accessing modules from within the same file can be done via a path
+</p>
+<div class="org-src-container">
+<pre class="src src-rust" id="org71d301a"><span style="color: #ffad29; font-weight: bold;">fn</span> <span style="color: #00ede1; font-weight: bold;">main</span>(){
+    <span style="color: #008b8b;">mymodule</span>::myfunc();
+    <span style="color: #008b8b;">mymodule</span>::<span style="color: #008b8b;">mysubmodule</span>::myotherfunc();
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb9bae1b" class="outline-4">
+<h4 id="orgb9bae1b"><span class="section-number-4">1.2.3</span> use keyword and navigating the crate hierarchy</h4>
+</div>
+</div>
+
+<div id="outline-container-org2715858" class="outline-3">
+<h3 id="org2715858"><span class="section-number-3">1.3</span> mixing all together</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org9f6b540" class="outline-4">
+<h4 id="org9f6b540"><span class="section-number-4">1.3.1</span> other compilation targets</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+files in the <code>examples</code> and <code>tests</code> are compiled according to the appropriate target   
+</p>
+<pre class="example" id="orgd08c997">
+projectname/
+|
++- Cargo.toml
+|
++- src/
+|  |
+|  +- lib.rs
+|
++- examples/
+|
++- tests/
+</pre>
+
+<p>
+e.g. the following command
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">cargo build --example mycode
+</pre>
+</div>
+
+<p>
+will compile the file <code>examples/mycode.rs</code>; to run it
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">cargo run --example mycode
+</pre>
+</div>
+
+<p>
+the test command will build and execute also the tests under the
+tests directory.
+</p>
+
+<p>
+But now things starts to be tricky: how can you import the modules in
+the src directory in order to test them?
+</p>
+
+<p>
+the same applies for examples
+</p>
+</div>
+</div>
+<div id="outline-container-orgc62433b" class="outline-4">
+<h4 id="orgc62433b"><span class="section-number-4">1.3.2</span> accessing the default crate from test files</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+suppose we have the following function in our library
+</p>
+<div class="org-src-container">
+<pre class="src src-rust" id="orgeae9c94"><span style="color: #ffad29; font-weight: bold;">pub</span> <span style="color: #ffad29; font-weight: bold;">fn</span> <span style="color: #00ede1; font-weight: bold;">myfunc</span>(){}
+</pre>
+</div>
+
+<p>
+the crate name is taken from the Cargo.toml name attribute
+</p>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #ffad29; font-weight: bold;">use</span> <span style="color: #008b8b;">rust_blog</span>;
+<span style="color: #23d7d7;">#[test]</span>
+<span style="color: #ffad29; font-weight: bold;">fn</span> <span style="color: #00ede1; font-weight: bold;">test_access_base</span>(){
+    <span style="color: #008b8b;">rust_blog</span>::myfunc();
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org33ba0d6" class="outline-4">
+<h4 id="org33ba0d6"><span class="section-number-4">1.3.3</span> accessing modules from different files</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+the following syntax, added to the lib.rs file is doing two actions:
+</p>
+<ul class="org-ul">
+<li>the mod command search for a file (in this case in the current directory)</li>
+<li><p>
+the pub modifier re-exports the command
+</p></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #ffad29; font-weight: bold;">pub</span> <span style="color: #ffad29; font-weight: bold;">mod</span> <span style="color: #008b8b;">poly</span>;
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>this allows to add a test file like the following: note that
+this looks for a <code>src/lib.rs</code> which in turn redirects to
+<code>src/poly.rs</code> file</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-rust"><span style="color: #ffad29; font-weight: bold;">use</span> <span style="color: #008b8b;">rust_blog</span>::poly;
+
+<span style="color: #ffad29; font-weight: bold;">mod</span> <span style="color: #008b8b;">test</span> {
+    <span style="color: #23d7d7;">#[test]</span>
+    <span style="color: #ffad29; font-weight: bold;">fn</span> <span style="color: #00ede1; font-weight: bold;">it_works</span>() {
+        <span style="color: #23d7d7;">assert_eq!</span>(2 + 2, 4);
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Marco Paolo Valerio Vezzoli</p>
+<p class="date">Created: 2021-12-29 Wed 19:12</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

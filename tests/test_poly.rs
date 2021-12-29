@@ -1,4 +1,3 @@
-#[cfg(test)]
 use rust_blog::poly;
 
 mod test {
