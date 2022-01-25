@@ -18,6 +18,8 @@ Photo by <a href="https://unsplash.com/@kelli_mcclintock?utm_source=unsplash&utm
 
   You can find other references about modules, crates and packages in
   the 7th [[https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html][chapter]] of the Rust Book.
+
+  The code in this post is available [[https://github.com/noiseOnTheNet/cargo_and_crates][on GitHub]] with MIT license.
 ** a few things about cargo
 *** basic default file layout for cargo
  cargo has a default layout: with the same toml you may expect

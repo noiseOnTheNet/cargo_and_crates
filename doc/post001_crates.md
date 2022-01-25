@@ -10,6 +10,8 @@ toolchain manager. It is more a roundup I needed to reconcile
 You can find other references about modules, crates and packages in
 the 7th [chapter](https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html) of the Rust Book.
 
+The code in this post is available [on GitHub](https://github.com/noiseOnTheNet/cargo_and_crates) with MIT license.
+
 
 # a few things about cargo
 
