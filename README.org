@@ -1,0 +1,4 @@
+This repository contains the code related to this [[https://noiseonthenet.space/noise/2022/01/crates-and-cargo/][post]] .
+
+The post source is also [[file:doc/post001_crates.org][here]]
+
